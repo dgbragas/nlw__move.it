@@ -5,7 +5,7 @@ const headings = [1, 2, 3, 4, 5, 6].map(number => `h${number}`).join(', ');
 export default createGlobalStyle`
   * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 150%;
     margin: 0;
     outline: 0;

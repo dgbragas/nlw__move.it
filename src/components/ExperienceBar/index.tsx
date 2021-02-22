@@ -12,9 +12,12 @@ export function ExperienceBar({
       <S.Percentage>0 exp</S.Percentage>
       <S.ProgressBar>
         <S.Bar width={currentProgress} />
-        <S.CurrentExperience leftPosition={currentProgress} />
+
+        <S.CurrentExperience leftPosition={currentProgress}>
+          300 exp
+        </S.CurrentExperience>
       </S.ProgressBar>
-      <S.Percentage>600px</S.Percentage>
+      <S.Percentage>600 exp</S.Percentage>
     </S.Container>
   );
 }

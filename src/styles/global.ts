@@ -13,8 +13,8 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
 
     ::selection {
-      background: #5965E0;
-      color: #fff;
+      background: ${({ theme: { colors } }) => colors.blue};
+      color: ${({ theme: { colors } }) => colors.white};
     }
   }
 
@@ -23,13 +23,26 @@ export default createGlobalStyle`
     margin: 0;
   }
 
+  @media (max-width: 1080px) {
+    html {
+      font-size: 93.75%;
+    }
+  }
+
+  @media (max-width: 720px) {
+    html {
+      font-size: 87.5%;
+    }
+  }
+
   html, body, #root {
-    background-color: #f2f3f5;
+    background-color: ${({ theme: { colors } }) => colors.background};
+    color: ${({ theme: { colors } }) => colors.text};
     height: 100%;
   }
 
   body, input, button, textarea {
-    font-family: 400 16px "Inter", sans-serif;
+    font-family: 400 1rem "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 

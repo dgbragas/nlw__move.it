@@ -30,6 +30,7 @@ export const Bar = styled.div<BarProps>`
   background-color: ${({ theme: { colors } }) => colors.green};
   border-radius: 4px;
   height: 100%;
+  transition: width 0.2s;
   width: ${({ width }) => `${width}%`};
 `;
 

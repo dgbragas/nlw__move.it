@@ -1,3 +1,7 @@
+import Head from 'next/head';
+
+import { CompletedChallenges } from '../components/CompletedChallenges';
+import { Countdown } from '../components/Countdown';
 import { ExperienceBar } from '../components/ExperienceBar';
 import { GridContainer } from '../components/GridContainer';
 import { Profile } from '../components/Profile';
@@ -6,14 +10,24 @@ import * as S from './styles';
 
 export default function Home(): JSX.Element {
   return (
-    <GridContainer>
-      <ExperienceBar currentProgress={50} />
+    <>
+      <Head>
+        <title>Início | move.it</title>
+      </Head>
 
-      <S.HomeSection>
-        <S.ProfileContainer>
-          <Profile />
-        </S.ProfileContainer>
-      </S.HomeSection>
-    </GridContainer>
+      <GridContainer>
+        <ExperienceBar currentProgress={50} />
+      </GridContainer>
+
+      <GridContainer>
+        <S.HomeSection>
+          <S.ProfileContainer>
+            <Profile />
+            <CompletedChallenges />
+            <Countdown />
+          </S.ProfileContainer>
+        </S.HomeSection>
+      </GridContainer>
+    </>
   );
 }

@@ -6,6 +6,7 @@ export const HomeSection = styled.section`
   flex: 1;
   grid-gap: 6.25rem;
   grid-template-columns: 1fr 1fr;
+  margin-top: 3rem;
 `;
 
 export const ProfileContainer = styled.div``;

@@ -72,7 +72,7 @@ export const CountdownButton = styled.button.attrs({
   }
 
   img {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 
   ${({ isActive }) =>
@@ -84,6 +84,10 @@ export const CountdownButton = styled.button.attrs({
       &:hover {
         background: ${({ theme: { colors } }) => colors.red};
         color ${({ theme: { colors } }) => colors.white};
+
+        svg path {
+          fill: ${({ theme: { colors } }) => colors.white};
+        }
       }
     `}
 `;

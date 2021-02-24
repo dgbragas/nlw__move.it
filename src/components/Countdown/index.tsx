@@ -74,6 +74,7 @@ export function Countdown(): JSX.Element {
               onClick={handleCountdownStart}
             >
               Iniciar novo ciclo
+              <img src="icons/play.svg" alt="Play" />
             </S.CountdownButton>
           )}
         </>

@@ -9,3 +9,5 @@ export const HomeSection = styled.section`
 `;
 
 export const ProfileContainer = styled.div``;
+
+export const ChallengeBoxContainer = styled.div``;

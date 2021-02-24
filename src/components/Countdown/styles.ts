@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   align-items: center;
@@ -39,7 +39,13 @@ export const MinutesCount = styled.div`
 
 export const SecondsCount = styled(MinutesCount)``;
 
-export const CountdownButton = styled.button`
+interface CountdownButtonProps {
+  isActive?: boolean;
+}
+
+export const CountdownButton = styled.button.attrs({
+  type: 'button',
+})<CountdownButtonProps>`
   align-items: center;
   background: ${({ theme: { colors } }) => colors.blue};
   border: 0;
@@ -51,10 +57,28 @@ export const CountdownButton = styled.button`
   height: 5rem;
   justify-content: center;
   margin-top: 2rem;
-  transition: background-color 0.2s;
+  transition: color, background-color 0.2s;
   width: 100%;
 
-  &:hover {
+  &:not(:disabled):hover {
     background: ${({ theme: { colors } }) => colors.blueDark};
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: ${({ theme: { colors } }) => colors.white};
+    color: ${({ theme: { colors } }) => colors.text};
+  }
+
+  ${({ isActive }) =>
+    isActive &&
+    css`
+      background: ${({ theme: { colors } }) => colors.white};
+      color: ${({ theme: { colors } }) => colors.title};
+
+      &:hover {
+        background: ${({ theme: { colors } }) => colors.red};
+        color ${({ theme: { colors } }) => colors.white};
+      }
+    `}
 `;

@@ -12,9 +12,11 @@ interface ChallengesContextData {
   level: number;
   currentExperience: number;
   completedChallenges: number;
+  experienceToNextLevel: number;
   activeChallenge: Challenge;
   levelUp: () => void;
   startNewChallenge: () => void;
+  resetChallenge: () => void;
 }
 
 interface ChallengesProviderProps {
@@ -32,6 +34,8 @@ export function ChallengesProvider({
 
   const [activeChallenge, setActiveChallenge] = useState(null);
 
+  const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
+
   function levelUp() {
     setLevel(level + 1);
   }
@@ -43,6 +47,10 @@ export function ChallengesProvider({
     setActiveChallenge(challenge);
   }
 
+  function resetChallenge() {
+    setActiveChallenge(null);
+  }
+
   return (
     <ChallengesContext.Provider
       value={{
@@ -51,7 +59,9 @@ export function ChallengesProvider({
         completedChallenges,
         activeChallenge,
         levelUp,
+        experienceToNextLevel,
         startNewChallenge,
+        resetChallenge,
       }}
     >
       {children}

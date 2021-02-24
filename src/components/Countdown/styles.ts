@@ -67,7 +67,12 @@ export const CountdownButton = styled.button.attrs({
   &:disabled {
     cursor: not-allowed;
     background: ${({ theme: { colors } }) => colors.white};
+    border-bottom: 5px solid ${({ theme: { colors } }) => colors.green};
     color: ${({ theme: { colors } }) => colors.text};
+  }
+
+  img {
+    margin-left: 0.5rem;
   }
 
   ${({ isActive }) =>

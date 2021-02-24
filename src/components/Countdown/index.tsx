@@ -55,7 +55,10 @@ export function Countdown(): JSX.Element {
       </S.Container>
 
       {hasFinished ? (
-        <S.CountdownButton disabled>Ciclo encerrado</S.CountdownButton>
+        <S.CountdownButton disabled>
+          Ciclo encerrado
+          <img src="icons/checked.svg" alt="Concluído" />
+        </S.CountdownButton>
       ) : (
         <>
           {isActive ? (

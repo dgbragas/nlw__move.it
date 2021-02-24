@@ -17,7 +17,7 @@ export default function Home(): JSX.Element {
       </Head>
 
       <GridContainer>
-        <ExperienceBar currentProgress={50} />
+        <ExperienceBar />
       </GridContainer>
 
       <GridContainer>

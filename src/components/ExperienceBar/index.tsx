@@ -1,23 +1,28 @@
+import { useContext } from 'react';
+
+import { ChallengesContext } from '../../contexts/ChallengeContext';
 import * as S from './styles';
 
-interface ExperienceBarProps {
-  currentProgress: number;
-}
+export function ExperienceBar(): JSX.Element {
+  const { currentExperience, experienceToNextLevel } = useContext(
+    ChallengesContext,
+  );
 
-export function ExperienceBar({
-  currentProgress,
-}: ExperienceBarProps): JSX.Element {
+  const percentToNextLevel = Math.round(
+    (currentExperience * 100) / experienceToNextLevel,
+  );
+
   return (
     <S.Container>
       <S.Percentage>0 exp</S.Percentage>
       <S.ProgressBar>
-        <S.Bar width={currentProgress} />
+        <S.Bar width={percentToNextLevel} />
 
-        <S.CurrentExperience leftPosition={currentProgress}>
-          300 exp
+        <S.CurrentExperience leftPosition={percentToNextLevel}>
+          {currentExperience} exp
         </S.CurrentExperience>
       </S.ProgressBar>
-      <S.Percentage>600 exp</S.Percentage>
+      <S.Percentage>{experienceToNextLevel} exp</S.Percentage>
     </S.Container>
   );
 }

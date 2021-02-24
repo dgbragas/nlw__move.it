@@ -35,7 +35,7 @@ export default class AppDocument extends Document {
             name="description"
             content="Gamecycle of work and exercises focused for those who spend a lot of time on the computer"
           />
-          <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+          <link rel="icon" href="favicon.png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap"

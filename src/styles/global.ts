@@ -35,10 +35,10 @@ export default createGlobalStyle`
     }
   }
 
-  html, body, #root {
+  html, body, #__next {
     background-color: ${({ theme: { colors } }) => colors.background};
     color: ${({ theme: { colors } }) => colors.text};
-    height: 100%;
+    min-height: 100vh;
   }
 
   body, input, button, textarea {

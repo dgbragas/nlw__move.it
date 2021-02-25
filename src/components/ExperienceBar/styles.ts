@@ -30,7 +30,7 @@ export const Bar = styled.div<BarProps>`
   background-color: ${({ theme: { colors } }) => colors.green};
   border-radius: 4px;
   height: 100%;
-  transition: width 0.2s;
+  transition: width 1s;
   width: ${({ width }) => `${width}%`};
 `;
 
@@ -38,5 +38,6 @@ export const CurrentExperience = styled.span<CurrentExperienceProps>`
   left: ${({ leftPosition }) => `${leftPosition}%`};
   position: absolute;
   top: 12px;
+  transition: left 1s;
   transform: translateX(-50%);
 `;

@@ -14,15 +14,15 @@ export function ExperienceBar(): JSX.Element {
 
   return (
     <S.Container>
-      <S.Percentage>0 exp</S.Percentage>
+      <S.Percentage>0 xp</S.Percentage>
       <S.ProgressBar>
         <S.Bar width={percentToNextLevel} />
 
         <S.CurrentExperience leftPosition={percentToNextLevel}>
-          {currentExperience} exp
+          {`${currentExperience} xp`}
         </S.CurrentExperience>
       </S.ProgressBar>
-      <S.Percentage>{experienceToNextLevel} exp</S.Percentage>
+      <S.Percentage>{experienceToNextLevel} xp</S.Percentage>
     </S.Container>
   );
 }

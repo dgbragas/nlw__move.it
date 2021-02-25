@@ -51,7 +51,8 @@
     "import/prefer-default-export": "off",
     "prettier/prettier": "error",
     "no-use-before-define": "off",
-    "no-restricted-properties": "off"
+    "no-restricted-properties": "off",
+    "operator-assignment": ["error", "never"]
   },
   "settings": {
     "import/resolver": {

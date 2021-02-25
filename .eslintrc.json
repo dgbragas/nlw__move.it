@@ -52,7 +52,8 @@
     "prettier/prettier": "error",
     "no-use-before-define": "off",
     "no-restricted-properties": "off",
-    "operator-assignment": ["error", "never"]
+    "operator-assignment": ["error", "never"],
+    "no-new": "off"
   },
   "settings": {
     "import/resolver": {

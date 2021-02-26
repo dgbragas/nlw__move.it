@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import styled from 'styled-components';
 
 import { GetServerSideProps } from 'next';
 
@@ -11,13 +12,24 @@ import { ExperienceBar } from '../components/ExperienceBar';
 import { GridContainer } from '../components/GridContainer';
 import { Profile } from '../components/Profile';
 
-import * as S from './styles';
-
 interface HomeProps {
   level: number;
   currentExperience: number;
   completedChallenges: number;
 }
+
+const HomeSection = styled.section`
+  align-content: center;
+  display: grid;
+  flex: 1;
+  grid-gap: 6.25rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3rem;
+`;
+
+const ProfileContainer = styled.div``;
+
+const ChallengeBoxContainer = styled.div``;
 
 export default function Home(props: HomeProps): JSX.Element {
   const { level, currentExperience, completedChallenges } = props;
@@ -37,17 +49,17 @@ export default function Home(props: HomeProps): JSX.Element {
       </GridContainer>
 
       <GridContainer>
-        <S.HomeSection>
-          <S.ProfileContainer>
+        <HomeSection>
+          <ProfileContainer>
             <Profile />
             <CompletedChallenges />
             <Countdown />
-          </S.ProfileContainer>
+          </ProfileContainer>
 
-          <S.ChallengeBoxContainer>
+          <ChallengeBoxContainer>
             <ChallengeBox />
-          </S.ChallengeBoxContainer>
-        </S.HomeSection>
+          </ChallengeBoxContainer>
+        </HomeSection>
       </GridContainer>
     </AppProvider>
   );

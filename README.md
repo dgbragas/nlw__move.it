@@ -58,7 +58,7 @@ Move.it it's a gamification game - focused for who pass too much time in front t
   yarn
 
   # Running the application (it will run at http://localhost:3000)
-  yarn install
+  yarn dev
 ```
 
 ## **:shoe: Next steps**

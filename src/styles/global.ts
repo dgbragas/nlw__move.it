@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const headings = [1, 2, 3, 4, 5, 6].map(number => `h${number}`).join(', ');
 
-export default createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;

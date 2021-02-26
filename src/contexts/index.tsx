@@ -4,11 +4,17 @@ import { CountdownProvider } from './CountdownContext';
 
 interface AppProviderProps {
   children: ReactNode;
+  level: number;
+  currentExperience: number;
+  completedChallenges: number;
 }
 
-export function AppProvider({ children }: AppProviderProps): JSX.Element {
+export function AppProvider({
+  children,
+  ...rest
+}: AppProviderProps): JSX.Element {
   return (
-    <ChallengesProvider>
+    <ChallengesProvider {...rest}>
       <CountdownProvider>{children}</CountdownProvider>
     </ChallengesProvider>
   );
